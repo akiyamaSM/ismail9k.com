@@ -1,22 +1,30 @@
 .intro
-  padding: 50px 0
+  margin: 100px auto 150px
   display: flex
   max-width: 80vw
-  min-height: calc(100vh - 150px)
-  margin: auto
   align-items: center
+  flex-wrap: wrap
 
 .intro-figure
   width: 40%
   margin-left: 10%
-
+  +tablet()
+    width: 90%
+    margin: auto
+    order: 1
+    margin-bottom: 50px
 .intro-info
   width: 50%
+  +tablet()
+    width: 100%
+    order: 2
 
 .intro-title
   font-size: $font-massive
   color: $primary
   margin: 0 0 1em
+  +tablet()
+    font-size: $font-large
 
 .intro-subtitle
   font-size: $font-medium

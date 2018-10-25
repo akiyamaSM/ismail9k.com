@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run build && npm run watch",
     "watch": "webpack-dev-server --hot --inline",
-    "build": "webpack"
+    "build": " NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
