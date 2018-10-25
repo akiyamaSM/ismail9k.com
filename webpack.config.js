@@ -74,7 +74,7 @@ const config = {
         loader: 'file-loader',
         options: {
           name: 'font/[name].[ext]',
-          outputPath: 'dist/'
+          publicPath: '../'
         }
       },
       {

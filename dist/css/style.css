@@ -9,13 +9,13 @@
 }
 @font-face {
   font-family: "Fira Code";
-  src: url(dist/font/FiraCode-Regular.ttf);
+  src: url(../font/FiraCode-Regular.ttf) format("truetype");
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
   font-family: "Fira Code";
-  src: url(dist/font/FiraCode-Bold.ttf);
+  src: url(../font/FiraCode-Bold.ttf) format("truetype");
   font-style: normal;
   font-weight: 700;
 }
