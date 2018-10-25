@@ -7,6 +7,18 @@
   width: 50%;
   padding: 20px;
 }
+@font-face {
+  font-family: "Fira Code";
+  src: url(dist/font/FiraCode-Regular.ttf);
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url(dist/font/FiraCode-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
 * {
   box-sizing: border-box;
   color: #404d6d;

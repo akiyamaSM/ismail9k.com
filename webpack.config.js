@@ -73,7 +73,8 @@ const config = {
         test: /\.(ttf|eot|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: 'font/[name].[ext]'
+          name: 'font/[name].[ext]',
+          outputPath: 'dist/'
         }
       },
       {
