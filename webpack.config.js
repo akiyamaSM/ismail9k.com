@@ -12,7 +12,7 @@ const page = (name) => {
   return new HtmlWebpack({
     inject: true,
     template: path.join(__dirname, `./src/pug/${name}.pug`),
-    filename: path.join(__dirname, `./dist/${name}.html`)
+    filename: path.join(__dirname, `.${name}.html`)
   });
 };
 

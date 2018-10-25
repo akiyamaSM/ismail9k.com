@@ -1,0 +1,185 @@
+.grid {
+  display: flex;
+  max-width: 80vw;
+  margin: auto;
+}
+.column {
+  width: 50%;
+  padding: 20px;
+}
+* {
+  box-sizing: border-box;
+  color: #404d6d;
+}
+body {
+  font-family: "Fira Code";
+  background-color: #dae4f1;
+  margin: 0;
+  padding: 0;
+  color: #404d6d;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  transition: 100ms;
+}
+.main {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid #f4f7fb;
+  margin: 20px;
+}
+.contact-button {
+  font-size: 40px;
+}
+.intro {
+  padding: 50px 0;
+  display: flex;
+  max-width: 80vw;
+  min-height: calc(100vh - 150px);
+  margin: auto;
+  align-items: center;
+}
+.intro-figure {
+  width: 40%;
+  margin-left: 10%;
+}
+.intro-info {
+  width: 50%;
+}
+.intro-title {
+  font-size: 40px;
+  color: #46ba7c;
+  margin: 0 0 1em;
+}
+.intro-subtitle {
+  font-size: 18px;
+  font-weight: normal;
+}
+.section {
+  max-width: 80vw;
+  margin: 100px auto;
+  display: flex;
+}
+.section.is-center {
+  align-items: center;
+}
+.section-info {
+  width: 33.33%;
+}
+.section-sticky {
+  position: sticky;
+  top: 30px;
+  margin-bottom: 100px;
+}
+.section-elements {
+  width: 66.67%;
+  padding-left: 8.33%;
+}
+.section-title {
+  font-size: 100px;
+  font-weight: bold;
+  color: #404d6d;
+  margin: 0 0 0.5em;
+}
+.section-title:after {
+  display: block;
+  content: '';
+  height: 8px;
+  width: 100px;
+  background-color: #46ba7c;
+}
+.section-description {
+  width: 66.67%;
+}
+.card {
+  margin-bottom: 100px;
+}
+.card a {
+  text-decoration: none;
+}
+.card a:hover {
+  color: #46ba7c;
+}
+.card-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 0 0.5em;
+}
+.card-subtitle {
+  font-size: 30px;
+  font-weight: normal;
+  color: #404d6d;
+  margin: 0 0 0.5em;
+}
+.card-info {
+  font-size: 18px;
+  font-weight: normal;
+  color: #404d6d;
+  margin: 0 0 0.5em;
+}
+.card-button {
+  border-width: 0 0 4px 0;
+  border-color: #404d6d;
+  border-style: solid;
+  text-decoration: none;
+  padding: 0.2em 0.5em 0.2em 0;
+  font-size: 16px;
+}
+.card-button:hover {
+  border-color: #46ba7c;
+}
+.navbar {
+  display: flex;
+  padding: 50px 50px;
+  align-items: center;
+  font-size: 16px;
+}
+.navbar-end {
+  align-self: flex-end;
+  float: right;
+  margin-left: auto;
+}
+.navbar-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar-item {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.brand-letter {
+  font-size: 30px;
+  color: #404d6d;
+  font-weight: bold;
+}
+.brand-dash {
+  font-size: 30px;
+  color: #46ba7c;
+  font-weight: bold;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.footer-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-item {
+  padding: 10px;
+  color: #404d6d;
+  fill: #404d6d;
+}
+
