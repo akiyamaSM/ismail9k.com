@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpack = require('html-webpack-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const ProgressBar = require('progress-bar-webpack-plugin');
-const MiniCssExtract = require("mini-css-extract-plugin");
+const MiniCssExtract = require('mini-css-extract-plugin');
 
 const env = process.env.NODE_ENV;
 const production = env === 'production';
