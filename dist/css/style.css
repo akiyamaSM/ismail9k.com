@@ -61,21 +61,25 @@ body {
   background-image: linear-gradient(0, #46ba7c, #46ba7c);
 }
 .intro {
-  margin: 100px auto 150px;
+  margin: 100px auto 200px;
   display: flex;
   max-width: 80vw;
   align-items: center;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 991px) {
+  .intro {
+    margin: 100px auto;
+  }
+}
 .intro-figure {
   width: 40%;
-  margin-left: 10%;
+  margin-right: 10%;
 }
 @media screen and (max-width: 991px) {
   .intro-figure {
     width: 90%;
     margin: auto;
-    order: 1;
     margin-bottom: 50px;
   }
 }
@@ -85,7 +89,6 @@ body {
 @media screen and (max-width: 991px) {
   .intro-info {
     width: 100%;
-    order: 2;
   }
 }
 .intro-title {
@@ -214,26 +217,57 @@ body {
   padding: 50px 50px;
   align-items: center;
   font-size: 16px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 20px 10px;
+  }
 }
 .navbar-end {
-  align-self: flex-end;
-  float: right;
   margin-left: auto;
+}
+@media screen and (max-width: 768px) {
+  .navbar-end {
+    width: 100%;
+    margin: auto;
+    flex-shrink: 0;
+  }
 }
 .navbar-menu {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 768px) {
   .navbar-menu {
-    display: none;
+    justify-content: space-around;
+    justify-content: space-evenly;
   }
 }
 .navbar-item {
   padding: 10px 20px;
   font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .navbar-item {
+    font-size: 16px;
+    padding: 10px 5px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+.navbar-toggle {
+  border: 0;
+  padding: 10px 0;
+  background: none;
 }
 .brand-letter {
   font-size: 30px;
@@ -244,6 +278,51 @@ body {
   font-size: 30px;
   color: #46ba7c;
   font-weight: bold;
+  animation: cursor 4s infinite;
+}
+@-moz-keyframes cursor {
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cursor {
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes cursor {
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cursor {
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .icon {
   width: 24px;
