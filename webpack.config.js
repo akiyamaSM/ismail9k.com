@@ -3,21 +3,22 @@ const HtmlWebpack = require('html-webpack-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const ProgressBar = require('progress-bar-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const CleanWebpack = require('clean-webpack-plugin');
 
 const env = process.env.NODE_ENV;
-const production = env === 'production';
+const devMode = env !== 'production';
 
 // render page
 const page = (name) => {
   return new HtmlWebpack({
     inject: true,
     template: path.join(__dirname, `./src/pug/${name}.pug`),
-    filename: path.join(__dirname, `${name}.html`)
+    filename: devMode ? `${name}.html` : `../${name}.html`
   });
 };
 
 const config = {
-  mode: production ? 'production' : 'development',
+  mode: devMode ? 'development' : 'production',
   entry: {
     app: './src/js/app.js'
   },
@@ -26,6 +27,7 @@ const config = {
     filename: 'js/[name].js'
   },
   plugins: [
+    new CleanWebpack(['dist', 'index.html']),
     new MiniCssExtract({
       path: path.join(__dirname, 'dist'),
       filename: 'css/style.css'
@@ -39,10 +41,7 @@ const config = {
     hot: true,
     inline: true,
     host: '0.0.0.0',
-    port: 3000,
-    publicPath: '/dist/',
-    contentBase: path.resolve(__dirname),
-    watchContentBase: true
+    port: 3000
   },
   module: {
     rules: [
@@ -61,13 +60,9 @@ const config = {
         }
       },
       {
-        test: /\.css$/,
-        loader: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.styl(us)?$/,
         use: [
-          MiniCssExtract.loader,
+          devMode ? 'style-loader' : MiniCssExtract.loader,
           'css-loader',
           'stylus-loader'
         ]
@@ -86,9 +81,6 @@ const config = {
         loader: [ 'raw-loader', 'pug-plain-loader' ]
       }
     ]
-  },
-  resolve: {
-    extensions: ['.js', '.json']
   }
 };
 
