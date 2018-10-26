@@ -3,22 +3,41 @@
   padding: 50px 50px
   align-items: center
   font-size: $font-small
+  flex-wrap: wrap
+  +mobile()
+    padding: 20px 10px
 
 .navbar-end
-  align-self: flex-end
-  float: right
   margin-left: auto
+  +mobile()
+    width: 100%
+    margin: auto
+    flex-shrink: 0
 .navbar-menu
   display: flex
   margin: 0
   padding: 0
   list-style: none
-  +tablet()
-    display: none
+  flex-wrap: wrap
+  +mobile()
+    justify-content: space-around
+    justify-content: space-evenly
+
 .navbar-item
   padding: 10px 20px
   font-weight: bold
-
+  +mobile()
+    font-size: $font-small
+    padding: 10px 5px
+.navbar-brand
+  +mobile()
+    display: block
+    margin: auto
+    margin-bottom: 20px
+.navbar-toggle
+  border: 0
+  padding: 10px 0
+  background: none
 
 .brand-letter
   font-size: $font-large
@@ -28,3 +47,11 @@
   font-size: $font-large
   color: $primary
   font-weight: bold
+  animation: cursor 4s infinite
+
+
+@keyframes cursor {
+  90% { opacity: 1 }
+  95% { opacity: 0 }
+  100% { opacity: 1 }
+}
