@@ -20,7 +20,7 @@ const page = (name) => {
 const config = {
   mode: devMode ? 'development' : 'production',
   entry: {
-    app: './src/js/app.js'
+    app: devMode ? './src/js/app.dev.js' : './src/js/app.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
