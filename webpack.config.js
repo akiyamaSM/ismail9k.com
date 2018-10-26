@@ -39,7 +39,10 @@ const config = {
     hot: true,
     inline: true,
     host: '0.0.0.0',
-    port: 3000
+    port: 3000,
+    publicPath: '/dist/',
+    contentBase: path.resolve(__dirname),
+    watchContentBase: true
   },
   module: {
     rules: [
