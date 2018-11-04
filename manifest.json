@@ -1,0 +1,21 @@
+{
+  "name": "Abdelrahman3D portfolio",
+  "short_name": "Abdelrahman3D",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#46BA7C",
+  "description": "Abdelrahamn Ismail (Abdelrahman3d), personal portfolio webpage.",
+  "icons": [
+    {
+      "src": "/assets/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
