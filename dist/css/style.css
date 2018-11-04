@@ -8,14 +8,14 @@
   padding: 20px;
 }
 @font-face {
-  font-family: "Fira Code";
-  src: url(../font/FiraCode-Regular.ttf) format("truetype");
+  font-family: 'Fira Code';
+  src: local('Fira Code'), url(../font/FiraCode-Regular.woff2) format('woff2'), url(../font/FiraCode-Regular.woff) format('woff'), url(../font/FiraCode-Regular.ttf) format('truetype');
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
-  font-family: "Fira Code";
-  src: url(../font/FiraCode-Bold.ttf) format("truetype");
+  font-family: 'Fira Code';
+  src: local('Fira Code Bold'), url(../font/FiraCode-Bold.woff2) format('woff2'), url(../font/FiraCode-Bold.woff) format('woff'), url(../font/FiraCode-Bold.ttf) format('truetype');
   font-style: normal;
   font-weight: 700;
 }
@@ -24,7 +24,7 @@
   color: #404d6d;
 }
 body {
-  font-family: "Fira Code", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: #dae4f1;
   margin: 0;
   padding: 0;

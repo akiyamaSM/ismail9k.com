@@ -68,7 +68,7 @@ const config = {
         ]
       },
       {
-        test: /\.(ttf|eot|svg)(\?.*)?$/,
+        test: /\.(woff2|woff|ttf|eot|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
           name: 'font/[name].[ext]',

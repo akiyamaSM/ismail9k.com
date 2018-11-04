@@ -1,12 +1,18 @@
 @font-face
-  font-family: "Fira Code"
-  src: url("../fonts/FiraCode-Regular.ttf") format("truetype");
+  font-family: 'Fira Code'
+  src: local('Fira Code'),
+       url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+       url('../fonts/FiraCode-Regular.woff') format('woff'),
+       url('../fonts/FiraCode-Regular.ttf') format('truetype');
   font-style: normal
   font-weight: 500
 
 @font-face
-  font-family: "Fira Code"
-  src: url("../fonts/FiraCode-Bold.ttf") format("truetype");
+  font-family: 'Fira Code'
+  src: local('Fira Code Bold'),
+       url('../fonts/FiraCode-Bold.woff2') format('woff2'),
+       url('../fonts/FiraCode-Bold.woff') format('woff'),
+       url('../fonts/FiraCode-Bold.ttf') format('truetype');
   font-style: normal
   font-weight: 700
 
@@ -15,7 +21,7 @@
   color: $dark
 
 body
-  font-family: "Fira Code", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
   background-color: $slategray
   margin: 0
   padding: 0
