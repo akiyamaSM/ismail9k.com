@@ -41,10 +41,10 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        return caches.open(staticCacheName).then(cache => {
-          cache.put(event.request.url, response.clone());
+        if (response) {
           return response;
-        });
+        }
+        return fetch(event.request);
 
       }).catch(error => {
         return caches.match('pages/offline.html');
