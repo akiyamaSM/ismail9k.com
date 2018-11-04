@@ -27,14 +27,15 @@ const config = {
     filename: 'js/[name].js'
   },
   plugins: [
-    new CleanWebpack(['dist', 'index.html']),
+    new CleanWebpack(['dist', 'index.html', 'offline.html']),
     new MiniCssExtract({
       path: path.join(__dirname, 'dist'),
       filename: 'css/style.css'
     }),
     new FriendlyErrors(),
     new ProgressBar(),
-    page('index')
+    page('index'),
+    page('offline')
   ],
   devServer: {
     historyApiFallback: true,
