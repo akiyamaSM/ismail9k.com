@@ -6,7 +6,7 @@ const filesToCache = [
   'index.html',
 ];
 
-const staticCacheName = 'Abdelrahman3D-cache-v1';
+const staticCacheName = 'Abdelrahman3D-cache-v2';
 
 // save files to cache
 self.addEventListener('install', event => {
