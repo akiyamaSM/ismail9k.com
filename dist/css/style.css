@@ -12,12 +12,14 @@
   src: local('Fira Code'), url(../font/FiraCode-Regular.woff2) format('woff2'), url(../font/FiraCode-Regular.woff) format('woff'), url(../font/FiraCode-Regular.ttf) format('truetype');
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Fira Code';
   src: local('Fira Code Bold'), url(../font/FiraCode-Bold.woff2) format('woff2'), url(../font/FiraCode-Bold.woff) format('woff'), url(../font/FiraCode-Bold.ttf) format('truetype');
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
 }
 * {
   box-sizing: border-box;
