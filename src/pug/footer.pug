@@ -2,26 +2,7 @@ include icon.pug
 
 footer.footer
   ul.footer-list
-    li
-      a.footer-item(href="//facebook.com/Abdelrahman3D" target="_blank" rel="noopener noreferrer")
-        +icon("facebook")
-    li
-      a.footer-item(href="//twitter.com/Abdelrahman3D" target="_blank" rel="noopener noreferrer")
-        +icon("twitter")
-    li
-      a.footer-item(href="mailto:abdelrahman3d@gmail.com?Subject=Hello")
-        +icon("mail")
-    li
-      a.footer-item(href="//github.com/Abdelrahman3D" target="_blank" rel="noopener noreferrer")
-        +icon("github")
-    li
-      a.footer-item(href="//medium.com/@Abdelrahman3D" target="_blank" rel="noopener noreferrer")
-        +icon("medium")
-
-    li
-      a.footer-item(href="//linkedin.com/in/abdelrahman3d/" target="_blank" rel="noopener noreferrer")
-        +icon("linkedin")
-
-    li
-      a.footer-item(href="//behance.net/Abdelrahman3D" target="_blank" rel="noopener noreferrer")
-        +icon("behance")
+    each social in socials
+      li
+        a.footer-item(href=social.href target="_blank" rel="noopener")
+          +icon(social.name)

@@ -79,7 +79,14 @@ const config = {
       {
         test: /.pug$/,
         exclude: /node_modules/,
-        loader: [ 'raw-loader', 'pug-plain-loader' ]
+        use: [
+          'raw-loader',
+          {
+            loader: 'pug-html-loader',
+            options: {
+              data: require('./src/data')
+            }
+          }],
       }
     ]
   }

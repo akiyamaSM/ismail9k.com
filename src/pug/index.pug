@@ -1,3 +1,4 @@
+
 extends layout.pug
 
 block content
@@ -55,33 +56,12 @@ block content
       p.section-description.
         I'm glad being part of this awesome project, this projects aim to give better experience for both developer and end-user.
     .section-elements
-      .card
-        a(href="https://abdelrahman3d.github.io/puppet/docs/examples/character.html" target="_blank" rel="noopener")
-          h3.card-title Puppet
-        h4.card-subtitle Svg Animation library
-        p.card-description.
-          Puppet is a promising project, it aims to gives the ability to controller SVG animations, dragging, and shapes.
-
-      .card
-        a(href="https://github.com/baianat/vuse" target="_blank" rel="noopener")
-          h3.card-title Vuse
-        h4.card-subtitle Vuejs plugin component
-        p.card-description.
-          Vuse provides the necessary tools to create an interactive page builder powered with Vuejs framework.
-
-      .card
-        a(href="https://github.com/baianat/vuse" target="_blank" rel="noopener")
-          h3.card-title Verte
-        h4.card-subtitle Vuejs plugin component
-        p.card-description.
-          A Color picker component. Built from the bottom to work with Vue.js and also comes in a vanilla version.
-
-      .card
-        a(href="https://github.com/baianat/align" target="_blank" rel="noopener")
-          h3.card-title Align
-        h4.card-subtitle Advanced text-editor
-        p.card-description.
-          Align is an advanced text editor that offers a rich post building experience. It has many several components that are customizable to the core.
+      each project in projects
+        .card
+          a(href=project.link target="_blank" rel="noopener")
+            h3.card-title= project.title
+          h4.card-subtitle= project.subtitle
+          p.card-description= project.description
 
   section#writings.section
     .section-info: .section-sticky
@@ -91,24 +71,12 @@ block content
       p.section-description.
         I write generally about front-end development techniques and tips, I also known for the “Quick CSS Quiz” series.
     .section-elements
-      .card
-        a(href="https://dev.to/abdelrahman3d/quick-css-quiz-1-47i4" target="_blank" rel="noopener")
-          h3.card-title Quick CSS Quiz Series
-        p.card-description.
-          CSS might be a total mystery to you or a topic that’s near and dear to your heart. Whether you think of CSS as a "necessary evil" or think of it as the power to control the world of technology, CSS is a must-have for anyone working on web applications. 
-        a.card-button(href="https://dev.to/abdelrahman3d/quick-css-quiz-1-47i4" target="_blank" rel="noopener") read more
-      .card
-        a(href="https://dev.to/abdelrahman3d/css-abuse-31gp" target="_blank" rel="noopener")
-          h3.card-title CSS Abuse
-        p.card-description.
-          It’s all about CSS. All authors here either forgot to use JavaScript or they had disabled it in their browser and can not enable it back again; so they had to finish the job using only pure CSS.
-        a.card-button(href="https://dev.to/abdelrahman3d/css-abuse-31gp" target="_blank" rel="noopener") read more
-      .card
-        a(href="https://dev.to/abdelrahman3d/css-percentage-unit-the-evil-parts-1g29" target="_blank" rel="noopener")
-          h3.card-title CSS percentage unit, the evil parts
-        p.card-description.
-          It should be one of the easiest CSS concepts to understand, the percentage CSS data type represents a percentage value, a percentage is a ratio expressed as a fraction of 100, so it has to do some calculations to get the final computed(absolute) value. 
-        a.card-button(href="https://dev.to/abdelrahman3d/css-percentage-unit-the-evil-parts-1g29" target="_blank" rel="noopener") read more
+      each post in writings
+        .card
+          a(href=post.link target="_blank" rel="noopener")
+            h3.card-title= post.title
+          p.card-description= post.description
+          a.card-button(href=post.link target="_blank" rel="noopener") read more
 
   section#contact.section.is-center
     .section-info: .section-sticky
