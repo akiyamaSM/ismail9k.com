@@ -4,25 +4,28 @@ extends layout.pug
 block content
   section.intro
     .intro-info
-      h1.intro-title Hello world, I'm Abdelrahman a Web Developer, writer, and a good father.
-      h2.intro-subtitle I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
-    .intro-figure
+      h1.intro-title.
+        Hello world, I'm Abdelrahman a Web Developer, writer, and a good father.
+      h2.intro-subtitle.
+        I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
+    .intro-figure.animation(data-animation="bounce")
       include character.pug
 
 
   section#working.section
-    .section-info:  .section-sticky
+    .section-info.animation(data-animation="slide-up"):  .section-sticky
       h2.section-title
         |Wor-
         |king
       p.section-description.
         Through the past four years, I've worked on a wide variety of projects, providing front-end development. I'm also an open source maintainer. 
     .section-elements
-      .card
+      .card.animation(data-animation="slide-up")
         h3.card-title I work on
         p.card-description.
           Design systems and many open-source tools that aim to introduce new better solutions for both the end-users and developers. I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
 
+      .card.animation(data-animation="slide-up")
         h4.card-subtitle Preferred Technologies
         .card-description
           ul
@@ -35,7 +38,7 @@ block content
             li Node.js
             li Version control (Git)
             li Adobe Illustrator
-
+      .card.animation(data-animation="slide-up")
         h4.card-subtitle Other Skills
         .card-description
           ul
@@ -49,7 +52,7 @@ block content
               li WCAG
 
   section#projects.section
-    .section-info: .section-sticky
+    .section-info.animation(data-animation="slide-up"): .section-sticky
       h2.section-title
         |Pro-
         |jects
@@ -57,14 +60,14 @@ block content
         I'm glad being part of this awesome project, this projects aim to give better experience for both developer and end-user.
     .section-elements
       each project in projects
-        .card
+        .card.animation(data-animation="slide-up")
           a(href=project.link target="_blank" rel="noopener")
             h3.card-title= project.title
           h4.card-subtitle= project.subtitle
           p.card-description= project.description
 
   section#writings.section
-    .section-info: .section-sticky
+    .section-info.animation(data-animation="slide-up"): .section-sticky
       h2.section-title
         |Wri-
         |tings
@@ -72,19 +75,19 @@ block content
         I write generally about front-end development techniques and tips, I also known for the “Quick CSS Quiz” series.
     .section-elements
       each post in writings
-        .card
+        .card.animation(data-animation="slide-up")
           a(href=post.link target="_blank" rel="noopener")
             h3.card-title= post.title
           p.card-description= post.description
           a.card-button(href=post.link target="_blank" rel="noopener") read more
 
   section#contact.section.is-center
-    .section-info: .section-sticky
+    .section-info.animation(data-animation="slide-up"): .section-sticky
       h2.section-title
         |Con-
         |tact
       p.section-description.
         It's your turn now, get in touch. Tell me about your self and how I can help you.
-    .section-elements
+    .section-elements.animation(data-animation="slide-up")
       a.contact-button(href="//twitter.com/Abdelrahman3D" target="_blank" rel="noopener").
         Feel free to send me a massage on twitter!
