@@ -1,4 +1,6 @@
+import 'intersection-observer';
 let observer;
+
 (function () {
   initServiceWorker();
   initObserver();
@@ -7,7 +9,6 @@ let observer;
 
 function initObserver () {
   document.addEventListener('DOMContentLoaded', function () {
-
     observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
