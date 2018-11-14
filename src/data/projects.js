@@ -1,9 +1,9 @@
 module.exports = [
   {
-    title: 'Puppet',
-    subtitle: 'Svg Animation library',
-    description: 'Puppet is a promising project, it aims to gives the ability to controller SVG animations, dragging, and shapes.',
-    link: 'https://abdelrahman3d.github.io/puppet/docs/examples/character.html'
+    title: 'Blexar',
+    subtitle: 'Framework',
+    description: 'Blexar is An HTML, CSS and JavaScript framework for developing responsive modern web interfaces, focused on usability and minimal sizes, with all the necessary extensions.',
+    link: 'http://blexar.s3-website.eu-central-1.amazonaws.com/'
   }, {
     title: 'Vuse',
     subtitle: 'Vuejs plugin component',
@@ -13,7 +13,7 @@ module.exports = [
     title: 'Verte',
     subtitle: 'Vuejs plugin component',
     description: 'A Color picker component. Built from the bottom to work with Vue.js and also comes in a vanilla version.',
-    link: 'https://github.com/baianat/verte'
+    link: 'https://baianat.github.io/verte/'
   }, {
     title: 'Align',
     subtitle: 'Advanced text-editor',
