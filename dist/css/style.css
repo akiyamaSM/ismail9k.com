@@ -48,19 +48,25 @@ body {
     margin: 5px;
   }
 }
-.contact-button {
+.contact-button,
+.resume-button {
   text-decoration: none;
-  padding: 0.1em 0.3em 0.1em 0.1em;
+  padding: 0.2em 0.05em;
+  line-height: 1.5em;
   font-size: 40px;
   background-image: linear-gradient(0, #404d6d, #404d6d);
-  background-size: 100% 0.1em;
+  background-size: 100% 0.12em;
   background-position: bottom center;
   background-repeat: no-repeat;
   transition: 130ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contact-button:focus {
+.contact-button:focus,
+.resume-button:focus {
   background-size: 100% 100%;
   background-image: linear-gradient(0, #46ba7c, #46ba7c);
+}
+.resume-button {
+  font-size: 16px;
 }
 .intro {
   margin: 100px auto 200px;
@@ -178,17 +184,19 @@ body {
 .card {
   margin-bottom: 70px;
 }
-.card a:not(.card-button) {
-  text-decoration: none;
-}
-.card a:not(.card-button):focus {
-  color: #46ba7c;
+.card a:focus {
+  color: #404d6d;
 }
 .card-title {
   font-size: 40px;
   font-weight: bold;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+}
+a.card-title :hover {
+  text-decoration: underline;
+}
+.card-title * {
   margin: 0 0 0.5em;
 }
 .card-subtitle {
@@ -205,11 +213,12 @@ body {
 }
 .card-button {
   text-decoration: none;
-  padding: 0.1em 0.3em 0.1em 0.1em;
+  padding: 0.2em 0.1em;
+  line-height: 1.5em;
   font-size: 16px;
   color: #404d6d;
   background-image: linear-gradient(0, #404d6d, #404d6d);
-  background-size: 100% 0.1em;
+  background-size: 100% 0.12em;
   background-position: bottom center;
   background-repeat: no-repeat;
   transition: 130ms cubic-bezier(0.4, 0, 0.2, 1);

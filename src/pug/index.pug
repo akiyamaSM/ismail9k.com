@@ -24,16 +24,18 @@ block content
         h3.card-title I work on
         p.card-description.
           Design systems and many open-source tools that aim to introduce new better solutions for both the end-users and developers. I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
-
+        a.resume-button(href="/assets/resume.pdf" target="_blank" rel="noopener").
+          Complete Résumé
       .card.animation(data-animation="slide-up")
-        h4.card-subtitle Preferred Technologies
+        h4.card-subtitle Tools & Technologies
         .card-description
           ul
             li Vue.js
             li JavaScript (ES6)
-            li Html (via Pug.js)
-            li CSS (via Stylus or Sass)
+            li HTML (via Pug.js)
+            li CSS (via Stylus/Sass)
             li Webpack
+            li Gulp.js
             li Rollup
             li Node.js
             li Version control (Git)
@@ -44,12 +46,12 @@ block content
           ul
             li SVG Animation
             li Design Patterns
-              li Digital illustration
-              li Best Practices
-              li Performance
-              li Leadership
-              li 53 words per minute
-              li WCAG
+            li Digital illustration
+            li Best Practices
+            li Performance
+            li Leadership
+            li 53 words per minute
+            li WCAG
 
   section#projects.section
     .section-info.animation(data-animation="slide-up"): .section-sticky
@@ -61,8 +63,8 @@ block content
     .section-elements
       each project in projects
         .card.animation(data-animation="slide-up")
-          a(href=project.link target="_blank" rel="noopener")
-            h3.card-title= project.title
+          a.card-title(href=project.link target="_blank" rel="noopener")
+            h3= project.title
           h4.card-subtitle= project.subtitle
           p.card-description= project.description
 
@@ -76,8 +78,8 @@ block content
     .section-elements
       each post in writings
         .card.animation(data-animation="slide-up")
-          a(href=post.link target="_blank" rel="noopener")
-            h3.card-title= post.title
+          a.card-title(href=post.link target="_blank" rel="noopener")
+            h3= post.title
           p.card-description= post.description
           a.card-button(href=post.link target="_blank" rel="noopener") read more
 
