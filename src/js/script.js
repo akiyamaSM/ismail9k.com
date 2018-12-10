@@ -4,6 +4,7 @@ let observer;
 (function () {
   initServiceWorker();
   initObserver();
+  googleAnalytics();
 })();
 
 
@@ -35,6 +36,15 @@ function startAnimating (el) {
   };
 
   el.addEventListener('animationend', onEnd);
+}
+
+function googleAnalytics () {
+  window.dataLayer = window.dataLayer || [];
+  function gtag () {
+    window.dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-130812708-1');
 }
 
 function initServiceWorker () {
