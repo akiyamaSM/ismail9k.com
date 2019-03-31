@@ -21,7 +21,7 @@ module.exports = [
     name: 'behance',
     href: '//behance.net/Abdelrahman3D'
   }, {
-    name: 'div',
+    name: 'dev',
     href: '//dev.to/abdelrahman3d'
   }
 ];
