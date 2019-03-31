@@ -27,7 +27,7 @@ const config = {
     filename: 'js/[name].js'
   },
   plugins: [
-    new CleanWebpack(['dist', 'index.html', 'offline.html']),
+    new CleanWebpack(),
     new MiniCssExtract({
       path: path.join(__dirname, 'dist'),
       filename: 'css/style.css'
