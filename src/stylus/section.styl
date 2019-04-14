@@ -29,14 +29,17 @@
   color: $dark
   margin: 0 0 0.5em
   max-width: 200px
-  &:after
+  &::after
     display: block
     content: ''
     height: 8px
-    width: 100px
+    width: 0
     background-color: $primary
+    transition: all 1.2s cubic-bezier(0.245, 0.495, 0, 0.99)
   +tablet()
     font-size: $font-header-small
+  &.is-active::after
+    width: 100px
 
 .section-description
   width: columns(2/3)

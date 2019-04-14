@@ -16,15 +16,24 @@ function initObserver () {
           startAnimating(entry.target);
         }
       });
+    }, {
+      threshold: 0.2
     });
+
     Array.from(document.querySelectorAll('.animation')).forEach(el => {
       observer.observe(el);
     });
-
+    Array.from(document.querySelectorAll('.fx')).forEach(el => {
+      observer.observe(el);
+    });
   });
 }
 
 function startAnimating (el) {
+  if(el.classList.contains('fx')) {
+    el.classList.add('is-active');
+    return;
+  }
   const name = el.dataset.animation;
   el.classList.add(name);
 
