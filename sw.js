@@ -1,11 +1,10 @@
 const filesToCache = [
   '/',
-  'assets',
   'dist/css/style.css',
   'dist/js/app.js',
   'dist/font/FiraCode-Bold.ttf',
   'dist/font/FiraCode-Regular.ttf',
-  'index.html',
+  'index.html'
 ];
 
 const staticCacheName = 'Abdelrahman3D-cache-v5';
@@ -41,17 +40,17 @@ self.addEventListener('activate', event => {
 // serve files to cache
 self.addEventListener('fetch', event => {
   // eslint-disable-next-line
-  console.log(event.request);
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // eslint-disable-next-line
-        console.log(response);
         if (response) {
           return response;
         }
-        return fetch(event.request);
-
+        // Add fetched files to the cache
+        return caches.open(staticCacheName).then(cache => {
+          cache.put(event.request.url, response.clone());
+          return response;
+        });
       }).catch(error => {
         return caches.match('pages/offline.html');
       })
