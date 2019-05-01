@@ -57,16 +57,16 @@ function googleAnalytics () {
 }
 
 function initServiceWorker () {
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(swReg => {
-          return swReg;
-        })
-        .catch(err => {
-          // eslint-disable-next-line
-          console.error('Service Worker Error', err);
-        });
-    });
-  }
+  if (!navigator.serviceWorker) return;
+
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(swReg => {
+        return swReg;
+      })
+      .catch(err => {
+        // eslint-disable-next-line
+        console.error('Service Worker Error', err);
+      });
+  });
 }

@@ -1,4 +1,6 @@
 const filesToCache = [
+  '/',
+  'assets',
   'dist/css/style.css',
   'dist/js/app.js',
   'dist/font/FiraCode-Bold.ttf',
@@ -6,7 +8,7 @@ const filesToCache = [
   'index.html',
 ];
 
-const staticCacheName = 'Abdelrahman3D-cache-v4';
+const staticCacheName = 'Abdelrahman3D-cache-v5';
 
 // save files to cache
 self.addEventListener('install', event => {
@@ -38,9 +40,13 @@ self.addEventListener('activate', event => {
 
 // serve files to cache
 self.addEventListener('fetch', event => {
+  // eslint-disable-next-line
+  console.log(event.request);
   event.respondWith(
     caches.match(event.request)
       .then(response => {
+        // eslint-disable-next-line
+        console.log(response);
         if (response) {
           return response;
         }
