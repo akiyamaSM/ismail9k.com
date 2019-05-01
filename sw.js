@@ -37,20 +37,21 @@ self.addEventListener('activate', event => {
   );
 });
 
-// serve files to cache
+// serve files from cache
 self.addEventListener('fetch', event => {
-  // eslint-disable-next-line
   event.respondWith(
     caches.match(event.request)
       .then(response => {
         if (response) {
           return response;
         }
-        return fetch(event.request);
-      }).then(response => {
-        return caches.open(staticCacheName).then(cache => {
-          cache.put(event.request.url, response.clone());
-          return response;
+        // Fetch files
+        return fetch(event.request).then(response => {
+          // Add fetched files to the cache
+          return caches.open(staticCacheName).then(cache => {
+            cache.put(event.request.url, response.clone());
+            return response;
+          });
         });
       }).catch(error => {
         return caches.match('pages/offline.html');
