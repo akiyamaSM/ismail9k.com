@@ -46,7 +46,8 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        // Add fetched files to the cache
+        return fetch(event.request);
+      }).then(response => {
         return caches.open(staticCacheName).then(cache => {
           cache.put(event.request.url, response.clone());
           return response;
