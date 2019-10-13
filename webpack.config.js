@@ -1,32 +1,35 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpack = require('html-webpack-plugin');
+const HtmlWebpackPartials = require('html-webpack-partials-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const env = process.env.NODE_ENV;
-const devMode = env !== 'production';
-
+const env = require('dotenv').config().parsed;
+const isDev = process.env.NODE_ENV !== 'production';
+const gtm_property_id = env.GTM_ID;
 // render page
 const page = name => {
   return new HtmlWebpack({
     inject: true,
     template: path.join(__dirname, `./src/pug/${name}.pug`),
-    filename: devMode ? `${name}.html` : `../${name}.html`,
+    filename: isDev ? `${name}.html` : `../${name}.html`,
   });
 };
 
 const config = {
-  mode: devMode ? 'development' : 'production',
+  mode: isDev ? 'development' : 'production',
   entry: {
-    app: devMode ? './src/js/app.dev.js' : './src/js/app.js',
+    app: isDev ? './src/js/app.dev.js' : './src/js/app.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name].js',
   },
   plugins: [
+    new Dotenv(),
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtract({
@@ -36,6 +39,18 @@ const config = {
     new FriendlyErrors(),
     page('index'),
     page('offline'),
+    new HtmlWebpackPartials({
+      path: './src/partials/tag-manager.html',
+      location: 'head',
+      priority: 'high',
+      options: { gtm_property_id },
+    }),
+    new HtmlWebpackPartials({
+      path: './src/partials/noscript.html',
+      location: 'body',
+      priority: 'high',
+      options: { gtm_property_id },
+    }),
   ],
   devServer: {
     historyApiFallback: true,
@@ -63,7 +78,7 @@ const config = {
       {
         test: /\.styl(us)?$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtract.loader,
+          isDev ? 'style-loader' : MiniCssExtract.loader,
           'css-loader',
           'stylus-loader',
         ],
