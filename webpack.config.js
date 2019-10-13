@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpack = require('html-webpack-plugin');
+const HtmlWebpackPartials = require('html-webpack-partials-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -36,6 +37,22 @@ const config = {
     new FriendlyErrors(),
     page('index'),
     page('offline'),
+    new HtmlWebpackPartials({
+      path: './src/partials/tag-manager.html',
+      location: 'head',
+      priority: 'high',
+      options: {
+        gtm_property_id: 'GTM-532G58F',
+      },
+    }),
+    new HtmlWebpackPartials({
+      path: './src/partials/noscript.html',
+      location: 'body',
+      priority: 'high',
+      options: {
+        gtm_property_id: 'GTM-532G58F',
+      },
+    }),
   ],
   devServer: {
     historyApiFallback: true,
