@@ -1,30 +1,26 @@
 module.exports = [
   {
     name: 'twitter',
-    href: 'https://twitter.com/Abdelrahman3D',
+    href: 'https://twitter.com/ismail_9k',
   },
   {
     name: 'mail',
-    href: 'mailto:abdelrahman3d@gmail.com?Subject=Hello',
+    href: 'mailto:hello@ismail9k.com?Subject=Hello',
   },
   {
     name: 'github',
-    href: 'https://github.com/Abdelrahman3D',
+    href: 'https://github.com/ismail9k',
   },
   {
     name: 'medium',
-    href: 'https://medium.com/@Abdelrahman3D',
+    href: 'https://medium.com/@ismail9k',
   },
   {
     name: 'linkedin',
-    href: 'https://linkedin.com/in/abdelrahman3d',
-  },
-  {
-    name: 'behance',
-    href: 'https://behance.net/Abdelrahman3D',
+    href: 'https://linkedin.com/in/ismail9k',
   },
   {
     name: 'dev',
-    href: 'https://dev.to/abdelrahman3d',
+    href: 'https://dev.to/ismail9k',
   },
 ];
