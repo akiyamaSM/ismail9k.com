@@ -1,24 +1,25 @@
 import 'intersection-observer';
 let observer;
 
-(function () {
+(function() {
   initServiceWorker();
   initObserver();
-  googleAnalytics();
 })();
 
-
-function initObserver () {
-  document.addEventListener('DOMContentLoaded', function () {
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          startAnimating(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
+function initObserver() {
+  document.addEventListener('DOMContentLoaded', function() {
+    observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startAnimating(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
 
     Array.from(document.querySelectorAll('.animation')).forEach(el => {
       observer.observe(el);
@@ -29,8 +30,8 @@ function initObserver () {
   });
 }
 
-function startAnimating (el) {
-  if(el.classList.contains('fx')) {
+function startAnimating(el) {
+  if (el.classList.contains('fx')) {
     el.classList.add('is-active');
     return;
   }
@@ -47,20 +48,12 @@ function startAnimating (el) {
   el.addEventListener('animationend', onEnd);
 }
 
-function googleAnalytics () {
-  window.dataLayer = window.dataLayer || [];
-  function gtag () {
-    window.dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'UA-130812708-1');
-}
-
-function initServiceWorker () {
+function initServiceWorker() {
   if (!navigator.serviceWorker) return;
 
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker
+      .register('sw.js')
       .then(swReg => {
         return swReg;
       })
