@@ -1,33 +1,44 @@
 .intro
-  margin: 100px auto 100px
   display: flex
-  width: 80vw
-  max-width: 1200px
-  align-items: center
   flex-wrap: wrap
+  align-items: center
+  margin: 70px auto 100px
+  max-width: 1200px
+  width: 80vw
+
   +tablet()
     margin: 100px auto
+
 .intro-figure
-  width: 40%
   margin-left: 10%
+  width: 40%
+
   +tablet()
     order: 1
-    width: 90%
     margin: auto
     margin-bottom: 50px
+    width: 90%
+
 .intro-info
   width: 50%
+
   +tablet()
     order: 2
     width: 100%
 
 .intro-title
-  font-size: $font-massive
-  color: $primary
   margin: 0 0 1em
+  color: $primary
+  font-size: $font-massive
+
   +tablet()
     font-size: $font-large
 
+  +dark()
+    text-shadow: 1px 1px 0 lighten($black, 10%) ,2px 2px 0 lighten($black, 10%)
+
 .intro-subtitle
-  font-size: $font-medium
   font-weight: normal
+  font-size: $font-medium
+  +dark()
+    color: $white

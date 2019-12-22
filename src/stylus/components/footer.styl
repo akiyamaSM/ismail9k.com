@@ -1,5 +1,5 @@
 .footer
-  padding: 20px
+  margin-bottom: 30px
   display: flex
   justify-content: center
 
@@ -12,4 +12,11 @@
 .footer-item
   padding: 10px
   color: $dark
-  fill: $dark
+  font-size: $font-large
+  &:hover
+    color: $primary
+
+  +dark()
+    color: $white
+    &:hover
+      color: $primary

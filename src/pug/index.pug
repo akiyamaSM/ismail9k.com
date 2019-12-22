@@ -22,7 +22,7 @@ block content
         h3.card-title I work on
         p.card-description.
           Design systems and many open-source tools that aim to introduce new better solutions for both the end-users and developers. I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
-        a.resume-button(href="/assets/resume.pdf" target="_blank" rel="noopener").
+        a.resume-button.link(href="/assets/resume.pdf" target="_blank" rel="noopener").
           Complete Résumé
       .card.animation(data-animation="slide-up")
         h4.card-subtitle Tools & Technologies
@@ -61,8 +61,8 @@ block content
     .section-elements
       each project in projects
         .card.animation(data-animation="slide-up")
-          a.card-title(href=project.link target="_blank" rel="noopener")
-            h3= project.title
+          h3.card-title
+            a.link(href=project.link target="_blank" rel="noopener")= project.title
           h4.card-subtitle= project.subtitle
           p.card-description= project.description
 
@@ -77,8 +77,8 @@ block content
     .section-elements
       each post in writings
         .card.animation(data-animation="slide-up")
-          a.card-title(href=post.link target="_blank" rel="noopener")
-            h3= post.title
+          h3.card-title
+            a.link(href=post.link target="_blank" rel="noopener")= post.title
           p.card-description= post.description
           a.card-button(href=post.link target="_blank" rel="noopener") read more
 
@@ -89,5 +89,5 @@ block content
       p.section-description.
         It's your turn now, get in touch. Tell me about your self and how I can help you.
     .section-elements.animation(data-animation="slide-up")
-      a.contact-button(href="https://twitter.com/Abdelrahman3D" target="_blank" rel="noopener").
+      a.contact-button.link(href="https://twitter.com/Abdelrahman3D" target="_blank" rel="noopener").
         Feel free to send me a massage on twitter!

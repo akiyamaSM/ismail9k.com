@@ -9,3 +9,11 @@ mobile()
 tablet()
   @media screen and (max-width: 991px)
     {block}
+
+dark()
+  @media (prefers-color-scheme: dark)
+    body:not(.theme-light) &
+      {block}
+
+  body.theme-dark &
+    {block}

@@ -1,61 +1,64 @@
 @font-face
-  font-family: 'Fira Code'
-  src: local('Fira Code'),
-       url('../fonts/FiraCode-Regular.woff2') format('woff2'),
-       url('../fonts/FiraCode-Regular.woff') format('woff'),
-       url('../fonts/FiraCode-Regular.ttf') format('truetype');
-  font-style: normal
   font-weight: 500
+  font-style: normal
+  font-family: 'Fira Code'
+  src: local('Fira Code'), url('../fonts/FiraCode-Regular.woff2') format('woff2'), url('../fonts/FiraCode-Regular.woff') format('woff'), url('../fonts/FiraCode-Regular.ttf') format('truetype')
   font-display: swap
 
 @font-face
-  font-family: 'Fira Code'
-  src: local('Fira Code Bold'),
-       url('../fonts/FiraCode-Bold.woff2') format('woff2'),
-       url('../fonts/FiraCode-Bold.woff') format('woff'),
-       url('../fonts/FiraCode-Bold.ttf') format('truetype');
-  font-style: normal
   font-weight: 700
+  font-style: normal
+  font-family: 'Fira Code'
+  src: local('Fira Code Bold'), url('../fonts/FiraCode-Bold.woff2') format('woff2'), url('../fonts/FiraCode-Bold.woff') format('woff'), url('../fonts/FiraCode-Bold.ttf') format('truetype')
   font-display: swap
+
+html,
+body
+  margin: 0
+  padding: 0
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+  transition: 100ms
+  scroll-behavior: smooth
 
 *
   box-sizing: border-box
-  color: $dark
-
-body
-  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
-  background-color: $slategray
-  margin: 0
-  padding: 0
-  color: $dark
-
-html
-body
-  scroll-behavior: smooth
-  transition: 100ms
 
 .main
-  background-color: $white
-  border-radius: 20px
+  margin: 30px
   border: 1px solid $gray
-  margin: 20px
+  border-radius: 20px
+  background-color: $white
+  box-shadow: 5px 5px 20px alpha($dark, 0.1), -5px -5px 20px alpha($white, 0.1)
+
   +tablet()
     margin: 5px
 
-.contact-button
+  +dark()
+    border-color: $white
+    background-color: $dark
+    box-shadow: 5px 5px 20px alpha($white, 0.1), -5px -5px 20px alpha($white, 0.1), inset 0 0 20px alpha($black, 0.1)
+    color: $white
+
+.contact-button,
 .resume-button
-  text-decoration: none
   padding: 0.2em 0.05em
-  line-height: 1.5em
-  font-size: $font-massive
   background-image: linear-gradient(0, $dark, $dark)
-  background-size: 100% 0.12em
   background-position: bottom center
+  background-size: 100% 0.12em
   background-repeat: no-repeat
-  transition: 130ms cubic-bezier(0.4, 0, 0.2, 1)
-  &:focus
-    background-size: 100% 100%
-    background-image: linear-gradient(0, $primary, $primary)
+  text-decoration: none
+  font-size: $font-massive
+  line-height: 1.5em
 
 .resume-button
   font-size: $font-small
+
+.sr-only
+  position: absolute
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  margin: -1px
+  padding: 0
+  width: 1px
+  height: 1px
+  border: 0

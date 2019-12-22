@@ -3,7 +3,7 @@ include icon.pug
 header
   nav.navbar
     a.navbar-brand
-      span.brand-letter A
+      span.brand-letter Ismail9k
       span.brand-dash _
     .navbar-end
       ul.navbar-menu
@@ -11,3 +11,9 @@ header
         li: a.navbar-item(href="#projects") projects
         li: a.navbar-item(href="#writings") writings
         li: a.navbar-item(href="#contact") contact
+        li
+          label.theme-switcher(for="themeSwitcher")
+            span.sr-only Theme mode switcher
+            input#themeSwitcher(type="checkbox" aria-labelledby="")
+            span(class="theme-🌝") 🌝
+            span(class="theme-🌚") 🌚
