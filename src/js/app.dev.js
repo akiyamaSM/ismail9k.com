@@ -1,3 +1,3 @@
 import '../stylus/app.styl';
 import './script.js';
-import '../pug/index.pug';
+import '../pug/home.pug';

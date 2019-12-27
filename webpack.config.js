@@ -37,7 +37,7 @@ const config = {
       filename: 'css/style.css',
     }),
     new FriendlyErrors(),
-    page('index'),
+    page('home'),
     page('offline'),
     new HtmlWebpackPartials({
       path: './src/partials/tag-manager.html',

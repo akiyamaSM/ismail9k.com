@@ -1,4 +1,4 @@
-extends layout
+extends layout/main
 
 block content
   section.intro
@@ -8,7 +8,7 @@ block content
       h2.intro-subtitle.animation(data-animation="slide-up")
         |I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
     .intro-figure.animation(data-animation="bounce")
-      include character.pug
+      include partial/figure
 
 
   section#working.section
