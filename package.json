@@ -33,6 +33,7 @@
     "mini-css-extract-plugin": "^0.8.0",
     "path": "^0.12.7",
     "pug": "^2.0.4",
+    "pug-html-loader": "^1.1.5",
     "raw-loader": "^3.1.0",
     "style-loader": "^1.0.0",
     "stylus": "^0.54.7",
@@ -42,7 +43,6 @@
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
-    "intersection-observer": "^0.7.0",
-    "pug-html-loader": "^1.1.5"
+    "intersection-observer": "^0.7.0"
   }
 }

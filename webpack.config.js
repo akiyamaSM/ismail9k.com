@@ -13,9 +13,10 @@ const gtm_property_id = env.GTM_ID;
 // render page
 const page = name => {
   return new HtmlWebpack({
-    inject: true,
     template: path.join(__dirname, `./src/pug/${name}.pug`),
     filename: isDev ? `${name}.html` : `../${name}.html`,
+    minify: false,
+    excludeChunks: ['puppet'],
   });
 };
 
@@ -23,6 +24,7 @@ const config = {
   mode: isDev ? 'development' : 'production',
   entry: {
     app: isDev ? './src/js/app.dev.js' : './src/js/app.js',
+    puppet: './src/puppet/puppet.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -31,13 +33,14 @@ const config = {
   plugins: [
     new Dotenv(),
     new webpack.ProgressPlugin(),
+    new FriendlyErrors(),
     new CleanWebpackPlugin(),
     new MiniCssExtract({
       path: path.join(__dirname, 'dist'),
-      filename: 'css/style.css',
+      filename: 'css/[name].css',
     }),
-    new FriendlyErrors(),
     page('home'),
+    page('puppet'),
     page('offline'),
     new HtmlWebpackPartials({
       path: './src/partials/tag-manager.html',
@@ -100,6 +103,7 @@ const config = {
             loader: 'pug-html-loader',
             options: {
               data: require('./src/data'),
+              pretty: true,
             },
           },
         ],
