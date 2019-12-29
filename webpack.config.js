@@ -5,6 +5,8 @@ const HtmlWebpackPartials = require('html-webpack-partials-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const env = require('dotenv').config().parsed;
@@ -30,6 +32,9 @@ const config = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name].js',
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
   },
   plugins: [
     new Dotenv(),
