@@ -34,11 +34,9 @@ class Controller {
         },
         set: (target, key, value) => {
           target[key] = value;
-          if (key == 'current') {
-            this.graphContainer.className.baseVal = '';
-            this.graphContainer.classList.add(value);
+          if (key === 'current') {
+            this.graphContainer.className.baseVal = value;
           }
-
           return true;
         },
       }
@@ -96,7 +94,9 @@ class Controller {
     // get element and its slider
     const partElement = document.getElementById(part);
     const partSlider = document.getElementsByName(part)[0];
-    const partSliderValue = partSlider.parentNode.querySelector('.range-slider__value');
+    const partSliderValue = partSlider.parentNode.querySelector(
+      '.range-slider__value'
+    );
 
     // set element transform origin
     partElement.style.transformOrigin = origin;
@@ -105,24 +105,25 @@ class Controller {
     // add listener to the element controller
     partSlider.addEventListener('input', () => {
       // check if the controller is enabled
-      if (this.state) {
-        // set flag that the slider is changed
-        this.changing = true;
-        this.lastPartChanged = camelCase(part);
+      if (!this.state) return;
 
-        // calculate transforms values
-        this.rotateValue =
-          ((rotate == 'clockwise' ? 1 : -1) * partSlider.value * degree) / partSlider.max;
-        this.translateValue = (partSlider.value * distance) / partSlider.max;
+      // set flag that the slider is changed
+      this.changing = true;
+      this.lastPartChanged = camelCase(part);
 
-        // update slider value
-        partSliderValue.innerHTML = partSlider.value;
+      // calculate transforms values
+      this.rotateValue =
+        ((rotate == 'clockwise' ? 1 : -1) * partSlider.value * degree) /
+        partSlider.max;
+      this.translateValue = (partSlider.value * distance) / partSlider.max;
 
-        // apply transforms to element
-        partElement.style.transform = `rotate(${
-          this.rotateValue
-        }deg) translate${direction.toUpperCase()}(${this.translateValue}px)`;
-      }
+      // update slider value
+      partSliderValue.innerHTML = partSlider.value;
+
+      // apply transforms to element
+      partElement.style.transform = `rotate(${
+        this.rotateValue
+      }deg) translate${direction.toUpperCase()}(${this.translateValue}px)`;
       this.changing = false;
       this.listeners
         .filter(e => e.name === 'sliderChanged')
@@ -170,7 +171,10 @@ class Controller {
   random() {
     Object.keys(this.sliders).forEach(key => {
       let slider = this.sliders[key];
-      this.changeSlider(slider, Math.random() * slider.max + Math.random() * slider.min);
+      this.changeSlider(
+        slider,
+        Math.random() * slider.max + Math.random() * slider.min
+      );
     });
 
     setTimeout(() => {

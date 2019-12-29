@@ -15,8 +15,9 @@ const page = name => {
   return new HtmlWebpack({
     template: path.join(__dirname, `./src/pug/${name}.pug`),
     filename: isDev ? `${name}.html` : `../${name}.html`,
-    minify: false,
-    excludeChunks: ['puppet'],
+    minify: !isDev,
+    inject: true,
+    excludeChunks: isDev ? [] : ['playground'],
   });
 };
 
@@ -24,7 +25,7 @@ const config = {
   mode: isDev ? 'development' : 'production',
   entry: {
     app: isDev ? './src/js/app.dev.js' : './src/js/app.js',
-    puppet: './src/puppet/puppet.js',
+    playground: './src/playground/index.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -39,8 +40,8 @@ const config = {
       path: path.join(__dirname, 'dist'),
       filename: 'css/[name].css',
     }),
-    page('home'),
-    page('puppet'),
+    page('index'),
+    page('playground'),
     page('offline'),
     new HtmlWebpackPartials({
       path: './src/partials/tag-manager.html',

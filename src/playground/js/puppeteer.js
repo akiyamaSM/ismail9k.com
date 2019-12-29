@@ -45,7 +45,7 @@ const draggable = new Draggable(controller, '#drag-area', {
   },
 });
 
-const timeline = new Timeline(controller, '.timeline', [
+new Timeline(controller, '.timeline', [
   controller.sliders,
   draggable.position,
   controller.mode,
@@ -113,7 +113,7 @@ controller.newSlider({
 
 controller.addEventListener('sliderChanged', part => {
   if (part === 'legL' || part === 'legR') {
-    // fallingAnimation(controller);
+    fallingAnimation(controller);
   }
   if (part === 'legL') {
     bagAnimation(controller.rotateValue);
@@ -175,24 +175,27 @@ let headMoveValue = 1;
   }, 600);
 })(controller);
 
+let timeouteId;
+
 function fallingAnimation(controller) {
-  setTimeout(() => {
+  let mode;
+  clearTimeout(timeouteId);
+  timeouteId = setTimeout(() => {
     if (
       parseInt(controller.sliders.legR.value) +
         parseInt(controller.sliders.legL.value) >=
       15
     ) {
+      mode = controller.mode.current;
       controller.disable();
-      controller.changeMode('😭', false);
-      console.log(controller.mode.previous);
+      controller.mode.current = '😭';
+      body.addEventListener('animationend', () => {
+        setTimeout(() => {
+          controller.changeMode(mode, true);
+          controller.enable();
+          controller.reset();
+        }, 1000);
+      });
     }
-  }, 5000);
-
-  body.addEventListener('animationend', () => {
-    setTimeout(() => {
-      controller.changeMode(controller.mode.previous, true);
-      controller.reset();
-      controller.enable();
-    }, 1000);
-  });
+  }, 1000);
 }

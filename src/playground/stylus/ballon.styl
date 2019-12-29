@@ -1,6 +1,9 @@
 .💬
   transition-all(0.5s, ease-in)
   display: block
+  foreignObject
+    width: 200px
+    height: 200px
   .➰
     transition-all(0.3s)
     filter: url('#dropShadow')
@@ -9,6 +12,7 @@
     stroke: alpha(lighten($dark, 90%), 0.1)
   .📄
     overflow: auto
+    padding-top: 75px
     width: 200px
     height: 200px
     outline: 0
@@ -18,7 +22,6 @@
     color: $dark
     text-align: center
     font-size: 30px
-    font-family: 'Raleway'
     resize: none
   &.💫
     .➰
