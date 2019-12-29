@@ -6,6 +6,7 @@ let observer;
   document.addEventListener('DOMContentLoaded', function() {
     initObserver();
     initThemeSwitcher();
+    initPlaygroundPortal();
   });
 })();
 
@@ -74,9 +75,7 @@ function initThemeSwitcher() {
   mql.addListener(themeChangeHandler);
 }
 
-
 function themeChangeHandler(e) {
-  console.log('e', e);
   const body = document.querySelector('body');
   const themeSwitcher = document.querySelector('#themeSwitcher');
   const isDark = (e.target && e.target.checked) || e.matches;
@@ -84,4 +83,12 @@ function themeChangeHandler(e) {
   themeSwitcher.checked = isDark;
   body.classList.remove('theme-dark', 'theme-light');
   body.classList.add(`theme-${isDark ? 'dark' : 'light'}`);
+}
+
+function initPlaygroundPortal() {
+  const figure = document.querySelector('#figure');
+  figure.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    window.open('/playground.html');
+  });
 }

@@ -1,16 +1,16 @@
 @keyframes slide-up
   from
-    transform: translateY(100px)
     opacity: 0.75
+    transform: translateY(100px)
   to
-    transform: translateY(0)
     opacity: 1
+    transform: translateY(0)
 
 @keyframes bounce
   0%
+    opacity: 1
     transform: translateY(-45px)
     animation-timing-function: ease-in
-    opacity: 1
   24%
     opacity: 1
   40%
@@ -32,9 +32,9 @@
     transform: translateY(0px)
     animation-timing-function: ease-out
   100%
+    opacity: 1
     transform: translateY(0px)
     animation-timing-function: ease-out
-    opacity: 1
 
 @keyframes head-rotate
   0%
@@ -72,27 +72,25 @@
   100%
     transform: rotate(0)
 
-#arm-right
-  transform-origin: 288px 348px
-  animation: arm-right-typing 2s infinite
-#arm-left
-  transform-origin: 220px 348px
-  animation: arm-left-typing 2s 1s infinite
-
-#head
-  transform-origin: 256px 338px
-  animation: head-rotate 10s infinite
-
-#eye-right
-  transform-origin: 286.89px 207.79px
-  animation: eye-blinking 10s infinite
-#eye-left
-  transform-origin: 221.12px 207.79px
-  animation: eye-blinking 10s infinite
+#figure
+  #arm-right
+    transform-origin: 288px 348px
+    animation: arm-right-typing 2s infinite
+  #arm-left
+    transform-origin: 220px 348px
+    animation: arm-left-typing 2s 1s infinite
+  #head
+    transform-origin: 256px 338px
+    animation: head-rotate 10s infinite
+  #eye-right
+    transform-origin: 286.89px 207.79px
+    animation: eye-blinking 10s infinite
+  #eye-left
+    transform-origin: 221.12px 207.79px
+    animation: eye-blinking 10s infinite
 
 .slide-up
   animation: slide-up 0.5s forwards
-
 
 .bounce
   animation: bounce 0.8s both

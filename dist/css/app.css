@@ -214,23 +214,23 @@ body.theme-dark {
 .fx-word:nth-child(4) .fx-letter:nth-child(9) {
   transition-delay: 0.65s;
 }
-#arm-right {
+#figure #arm-right {
   transform-origin: 288px 348px;
   animation: arm-right-typing 2s infinite;
 }
-#arm-left {
+#figure #arm-left {
   transform-origin: 220px 348px;
   animation: arm-left-typing 2s 1s infinite;
 }
-#head {
+#figure #head {
   transform-origin: 256px 338px;
   animation: head-rotate 10s infinite;
 }
-#eye-right {
+#figure #eye-right {
   transform-origin: 286.89px 207.79px;
   animation: eye-blinking 10s infinite;
 }
-#eye-left {
+#figure #eye-left {
   transform-origin: 221.12px 207.79px;
   animation: eye-blinking 10s infinite;
 }
@@ -245,49 +245,49 @@ body.theme-dark {
 }
 @-moz-keyframes slide-up {
   from {
-    transform: translateY(100px);
     opacity: 0.75;
+    transform: translateY(100px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-up {
   from {
-    transform: translateY(100px);
     opacity: 0.75;
+    transform: translateY(100px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @-o-keyframes slide-up {
   from {
-    transform: translateY(100px);
     opacity: 0.75;
+    transform: translateY(100px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes slide-up {
   from {
-    transform: translateY(100px);
     opacity: 0.75;
+    transform: translateY(100px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @-moz-keyframes bounce {
   0% {
+    opacity: 1;
     transform: translateY(-45px);
     animation-timing-function: ease-in;
-    opacity: 1;
   }
   24% {
     opacity: 1;
@@ -313,16 +313,16 @@ body.theme-dark {
     animation-timing-function: ease-out;
   }
   100% {
+    opacity: 1;
     transform: translateY(0px);
     animation-timing-function: ease-out;
-    opacity: 1;
   }
 }
 @-webkit-keyframes bounce {
   0% {
+    opacity: 1;
     transform: translateY(-45px);
     animation-timing-function: ease-in;
-    opacity: 1;
   }
   24% {
     opacity: 1;
@@ -348,16 +348,16 @@ body.theme-dark {
     animation-timing-function: ease-out;
   }
   100% {
+    opacity: 1;
     transform: translateY(0px);
     animation-timing-function: ease-out;
-    opacity: 1;
   }
 }
 @-o-keyframes bounce {
   0% {
+    opacity: 1;
     transform: translateY(-45px);
     animation-timing-function: ease-in;
-    opacity: 1;
   }
   24% {
     opacity: 1;
@@ -383,16 +383,16 @@ body.theme-dark {
     animation-timing-function: ease-out;
   }
   100% {
+    opacity: 1;
     transform: translateY(0px);
     animation-timing-function: ease-out;
-    opacity: 1;
   }
 }
 @keyframes bounce {
   0% {
+    opacity: 1;
     transform: translateY(-45px);
     animation-timing-function: ease-in;
-    opacity: 1;
   }
   24% {
     opacity: 1;
@@ -418,9 +418,9 @@ body.theme-dark {
     animation-timing-function: ease-out;
   }
   100% {
+    opacity: 1;
     transform: translateY(0px);
     animation-timing-function: ease-out;
-    opacity: 1;
   }
 }
 @-moz-keyframes head-rotate {
