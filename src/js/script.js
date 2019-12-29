@@ -94,8 +94,8 @@ function initPlaygroundPortal() {
     e.preventDefault();
     window.open('/playground.html');
   };
-  const touchstart = () => {
-    timer = setTimeout(goToPlayground, touchDuration);
+  const touchstart = e => {
+    timer = setTimeout(() => goToPlayground(e), touchDuration);
   };
   const touchend = () => {
     if (timer) {
