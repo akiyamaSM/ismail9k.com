@@ -2,11 +2,11 @@
 body,
 .theme-light
   background-color: $slategray
-  color: $dark
+  color: $secondary
 
 @media (prefers-color-scheme: dark)
   body:not(.theme-light)
-    background-color: $black
+    background-color: darken($secondary, 80%)
     color: $white
 
 body.theme-dark

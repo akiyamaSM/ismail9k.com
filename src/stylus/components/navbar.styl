@@ -4,13 +4,11 @@
   align-items: center
   padding: 50px 50px
   font-size: $font-small
-
   +mobile()
     padding: 20px 10px
 
 .navbar-end
   margin-left: auto
-
   +mobile()
     flex-shrink: 0
     margin: auto
@@ -22,7 +20,6 @@
   margin: 0
   padding: 0
   list-style: none
-
   +mobile()
     justify-content: space-around
     justify-content: space-evenly
@@ -30,20 +27,16 @@
 .navbar-item
   margin: 0 10px
   padding: 10px
-  color: $dark
+  color: $secondary
   font-weight: bold
   transition: 130ms cubic-bezier(0.4, 0, 0.2, 1)
   text-underline-position: under
-
   &:hover
     text-decoration-color: $primary
-
   &:focus
     outline: 2px dashed
-
   +dark()
     color: $white
-
   +mobile()
     padding: 10px 5px
     font-size: $font-small
@@ -60,10 +53,9 @@
   background: none
 
 .brand-letter
-  color: $dark
+  color: $secondary
   font-weight: bold
   font-size: $font-large
-
   +dark()
     color: $white
 
@@ -72,16 +64,13 @@
   font-weight: bold
   font-size: $font-large
   animation: cursor 4s infinite
-
   +dark()
     color: $primary
 
 @keyframes cursor
   90%
     opacity: 1
-
   95%
     opacity: 0
-
   100%
     opacity: 1

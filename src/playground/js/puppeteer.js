@@ -10,7 +10,7 @@ const head = document.querySelector('#head');
 const bag = document.querySelector('#bag-body');
 
 const controller = new Controller(
-  '#character',
+  '#puppet',
   '.controller__sliders',
   '.controller__modes'
 );

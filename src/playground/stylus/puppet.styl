@@ -1,18 +1,16 @@
-body
-  margin: 0
-  background-color: alpha($dark, 0.01)
-
-svg
-  transition-all(0.1s)
-  display: block
-  margin: auto
-
-g,
-path,
-polygon,
-circle,
-rect
-  transition: all 0.5s ease-in-out
+.puppet
+  svg
+    display: block
+    margin: auto
+    width: 100vw
+    height: 100vh
+    transition: 0
+  g,
+  path,
+  polygon,
+  circle,
+  rect
+    transition: all 0.5s ease-in-out
 
 .👖
   fill: $jeans
@@ -98,7 +96,7 @@ rect
 #drag-area
   transition-all(0.15s)
 
-#character
+#puppet
   width: 100vw
   height: 100vh
   transform: translate(0, 0)

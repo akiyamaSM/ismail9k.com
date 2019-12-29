@@ -24,25 +24,23 @@ body
   box-sizing: border-box
 
 .main
-  margin: 30px
-  border: 1px solid $gray
+  margin: 40px
+  border: 1px solid $white
   border-radius: 20px
   background-color: $white
-  box-shadow: 5px 5px 20px alpha($dark, 0.1), -5px -5px 20px alpha($white, 0.1)
-
+  box-shadow: 10px 10px 40px alpha($secondary, 0.1), -10px -10px 40px alpha($white, 0.9), inset 2px 2px 40px alpha($white, 0.75)
   +tablet()
     margin: 5px
-
   +dark()
-    border-color: $white
-    background-color: $dark
-    box-shadow: 5px 5px 20px alpha($white, 0.1), -5px -5px 20px alpha($white, 0.1), inset 0 0 20px alpha($black, 0.1)
+    border-color: $black
+    background-color: darken($secondary, 10%)
+    box-shadow: 0 0 40px alpha($black, 0.5)
     color: $white
 
 .contact-button,
 .resume-button
   padding: 0.2em 0.05em
-  background-image: linear-gradient(0, $dark, $dark)
+  background-image: linear-gradient(0, $secondary, $secondary)
   background-position: bottom center
   background-size: 100% 0.12em
   background-repeat: no-repeat

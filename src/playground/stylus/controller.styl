@@ -7,17 +7,19 @@
     width: 40px
     height: 40px
     border-radius: 40px
-    background-color: alpha($dark, 50%)
+    background-color: $green
     box-shadow: 0 5px 5px -0.5px alpha($dark, 70%), inset 0 -1px alpha($dark, 40%)
     color: $dark
+    opacity: 0.2
     cursor: pointer
     &:hover,
     &:focus
-      background-color: $green
       box-shadow: 0 7px 7px -0.5px alpha($dark, 70%), inset 0 -1px alpha($dark, 40%)
+      opacity: 1
       transform: scale(1.1)
     &.active
       background-color: $green
+      opacity: 1
 
 .controller
   transition-all(0.4s)
@@ -27,7 +29,7 @@
   z-index: 10
   padding: 30px 0
   width: 220px
-  background: alpha($dark, 90%)
+  background: $dark
   +responsive()
     top: 0
     right: 0
