@@ -87,8 +87,23 @@ function themeChangeHandler(e) {
 
 function initPlaygroundPortal() {
   const figure = document.querySelector('#figure');
-  figure.addEventListener('contextmenu', e => {
+  const touchDuration = 1000; //length of time we want the user to touch before we do something
+  let timer;
+
+  const goToPlayground = e => {
     e.preventDefault();
     window.open('/playground.html');
-  });
+  };
+  const touchstart = () => {
+    timer = setTimeout(goToPlayground, touchDuration);
+  };
+  const touchend = () => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+  };
+
+  figure.addEventListener('touchstart', touchstart);
+  figure.addEventListener('touchend', touchend);
+  figure.addEventListener('contextmenu', goToPlayground);
 }
