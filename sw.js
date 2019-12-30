@@ -4,24 +4,22 @@ const filesToCache = [
   'dist/js/app.js',
   'dist/font/FiraCode-Bold.ttf',
   'dist/font/FiraCode-Regular.ttf',
-  'index.html'
+  'index.html',
 ];
 
-const staticCacheName = 'ismail9k-cache-v1';
+const staticCacheName = 'ismail9k-cache-v2';
 
-// save files to cache
+// save files to cachew
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(staticCacheName)
-      .then(cache => {
-        return cache.addAll(filesToCache);
-      })
+    caches.open(staticCacheName).then(cache => {
+      return cache.addAll(filesToCache);
+    })
   );
 });
 
-// get rid of unused caches 
+// get rid of unused caches
 self.addEventListener('activate', event => {
-
   const cacheWhitelist = [staticCacheName];
 
   event.waitUntil(
@@ -40,7 +38,8 @@ self.addEventListener('activate', event => {
 // serve files from cache
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
+    caches
+      .match(event.request)
       .then(response => {
         if (response) {
           return response;
@@ -53,7 +52,8 @@ self.addEventListener('fetch', event => {
             return response;
           });
         });
-      }).catch(error => {
+      })
+      .catch(error => {
         return caches.match('pages/offline.html');
       })
   );
