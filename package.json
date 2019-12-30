@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Abdelrahman3D/portfolio.git"
+    "url": "git+https://github.com/ismail9k/portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Abdelrahman3D/portfolio/issues"
+    "url": "https://github.com/ismail9k/portfolio/issues"
   },
-  "homepage": "https://github.com/Abdelrahman3D/portfolio#readme",
+  "homepage": "https://github.com/ismail9k/portfolio#readme",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",

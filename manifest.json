@@ -5,25 +5,29 @@
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#3fa66f",
-  "description": "Abdelrahamn Ismail (Abdelrahman3D), personal portfolio webpage.",
+  "description": "Abdelrahamn Ismail, personal portfolio webpage.",
   "icons": [
     {
       "src": "/assets/icons-152.png",
       "type": "image/png",
       "sizes": "152x152"
-    }, {
+    },
+    {
       "src": "/assets/icons-167.png",
       "type": "image/png",
       "sizes": "167x167"
-    }, {
+    },
+    {
       "src": "/assets/icons-180.png",
       "type": "image/png",
       "sizes": "180x180"
-    }, {
+    },
+    {
       "src": "/assets/icons-android-192.png",
       "type": "image/png",
       "sizes": "192x192"
-    }, {
+    },
+    {
       "src": "/assets/icons-android-512.png",
       "type": "image/png",
       "sizes": "512x512"
