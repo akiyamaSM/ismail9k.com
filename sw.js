@@ -7,7 +7,7 @@ const filesToCache = [
   'index.html',
 ];
 
-const staticCacheName = 'ismail9k-cache-v2';
+const staticCacheName = 'ismail9k-cache-10022020';
 
 // save files to cachew
 self.addEventListener('install', event => {
