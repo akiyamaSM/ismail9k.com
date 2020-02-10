@@ -45,6 +45,7 @@ const config = {
     page('index'),
     page('playground'),
     page('offline'),
+    page('neomorphism'),
     new HtmlWebpackPartials({
       path: './src/partials/tag-manager.html',
       location: 'head',
