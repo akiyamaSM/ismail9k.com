@@ -4,14 +4,12 @@ const HtmlWebpack = require('html-webpack-plugin');
 const HtmlWebpackPartials = require('html-webpack-partials-plugin');
 const FriendlyErrors = require('friendly-errors-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
-const Dotenv = require('dotenv-webpack');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const env = require('dotenv').config().parsed;
 const isDev = process.env.NODE_ENV !== 'production';
-const gtm_property_id = env.GTM_ID;
+const gtm_property_id = 'GTM-532G58F';
 // render page
 const page = name => {
   return new HtmlWebpack({
@@ -37,7 +35,6 @@ const config = {
     minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
   },
   plugins: [
-    new Dotenv(),
     new webpack.ProgressPlugin(),
     new FriendlyErrors(),
     new CleanWebpackPlugin(),
